@@ -55,7 +55,7 @@ s.authors            = { "billnie" => "billnie@users.noreply.github.com" }
 
 
 
-    s.source_files  = "IOS/boost/*.{h,m,c}"
+    s.source_files  = "./*.{h,m,c,zip,a}"
 
   s.exclude_files = "Classes/Exclude"
 
