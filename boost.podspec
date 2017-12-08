@@ -1,10 +1,4 @@
-#
-#  Be sure to run `pod spec lint boost.podspec' to ensure this is a
-#  valid spec and to remove all comments including this before submitting the spec.
-#
-#  To learn more about Podspec attributes see http://docs.cocoapods.org/specification.html
-#  To see working Podspecs in the CocoaPods repo see https://github.com/CocoaPods/Specs/
-#
+
 
 Pod::Spec.new do |s|
 
@@ -18,15 +12,14 @@ Pod::Spec.new do |s|
   s.name         = "boost"
   s.version      = "0.0.1"
   s.summary      = "boost for ios."
+s.description  = <<-DESC
+            A longer description of helper_ios in Markdown format.
 
-  # This description is used to generate tags and improve search results.
-  #   * Think: What does it do? Why did you write it? What is the focus?
-  #   * Try to keep it short, snappy and to the point.
-  #   * Write the description between the DESC delimiters below.
-  #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = <<-DESC
-                   DESC
-
+            * Think: Why did you write this? What is the focus? What does it do?
+            * CocoaPods will be using this to generate tags, and improve search results.
+            * Try to keep it short, snappy and to the point.
+            * Finally, don't worry about the indent, CocoaPods strips it!
+    DESC
   s.homepage     = "https://github.com/billnie/ios_boost"
 
  s.license      = { :type => "MIT", }
@@ -34,13 +27,7 @@ Pod::Spec.new do |s|
 
 
 s.authors            = { "billnie" => "billnie@users.noreply.github.com" }
-  # s.social_media_url   = "http://twitter.com/billnie"
 
-  # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  If this Pod runs only on iOS or OS X, then specify the platform and
-  #  the deployment target. You can optionally include the target after the platform.
-  #
 
  s.platform     = :ios, "8.0"
 
@@ -55,11 +42,9 @@ s.authors            = { "billnie" => "billnie@users.noreply.github.com" }
 
 
 
-    s.source_files  = "./*.{h,m,c,zip,a}"
+s.source_files  = "include/**/*.{h,m,c,zip,a,hpp}"
 
-  s.exclude_files = "Classes/Exclude"
-
-  # s.public_header_files = "Classes/**/*.h"
+s.public_header_files = "boost/include/**/*.{h,hpp}"
 
 
 
@@ -84,7 +69,9 @@ s.authors            = { "billnie" => "billnie@users.noreply.github.com" }
 
   # s.requires_arc = true
 
-  # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
+   s.xcconfig = { "HEADER_SEARCH_PATHS" => "${PROJECT_DIR}/ios_boost/include",
+                "LIBRARY_SEARCH_PATHS" => "${PROJECT_DIR}/ios_boost/ios"
+    }
   # s.dependency "JSONKit", "~> 1.4"
 
 end
